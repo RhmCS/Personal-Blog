@@ -1,0 +1,33 @@
+.author-profile {
+  display: flex;
+}
+
+.profile-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+}
+
+.img-style {
+  width: 400px;
+  height: 150px;
+}
+
+.content-style {
+  text-align: left;
+}
+
+/* Medium Screens */
+@media (min-width: 600px) and (max-width: 900px) {
+  .img-style {
+    width: 500px;
+    height: 300px;
+  }
+}
+/* Large Screens */
+@media (min-width: 901px) {
+  .img-style {
+    width: 800px;
+    height: 300px;
+  }
+}
