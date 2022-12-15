@@ -36,13 +36,15 @@ app.post("/api", (req, res) => {
 });
 
 // GET method route
-app.get("/all", (req, res) => {
+app.get("/", (req, res) => {
   // res.send(projectData);
   res.sendFile("dist/index.html");
 });
 
 // Setup Server
-const port = 8081;
+const port = 5000;
 app.listen(port, () => {
   console.log(`running on localhost: ${port} ...`);
 });
+
+module.exports = app;

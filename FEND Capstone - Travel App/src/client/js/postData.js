@@ -1,5 +1,5 @@
 // Function to POST data
-export async function postData(url = "", data = {}) {
+async function postData(url = "", data = {}) {
   const req = await fetch(url, {
     method: "POST",
     credentials: "same-origin",
@@ -22,3 +22,5 @@ export async function postData(url = "", data = {}) {
     console.log(error);
   }
 }
+
+export { postData };

@@ -1,11 +1,13 @@
 const today = new Date();
 
 // Function to Retrieve Data
-export async function updateData() {
-  const request = await fetch("/all");
+async function updateData() {
+  const request = await fetch("/");
+  console.log(request);
   try {
     // Transform into JSON
     const allData = await request.json();
+    console.log("allData", allData);
     // Write updated data to DOM elements
     const tripdetiles = document.querySelector(".trip-detiles");
 
@@ -31,3 +33,5 @@ export async function updateData() {
     // appropriately handle the error
   }
 }
+
+export { updateData };

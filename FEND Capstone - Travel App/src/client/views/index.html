@@ -30,7 +30,7 @@
               </p>
             </div>
               <br />
-              <form action="" id="my_form">
+              <form  id="my_form">
               <div class="other-input">
                 <div class="input-group">
                   <input  class="input-style input-size" id="city"  type="text" placeholder="Enter your destination" />
@@ -42,8 +42,10 @@
               </div>
   
               <div class="btn">
-                <!-- <button class='btn-style ' type="button" >Change method</button> -->
-                <button class="btn-style btn-primary" id="generate" type="submit">
+                <!-- onclick="return Client.handelSubmit(event)"
+                onsubmit="return handelSubmit(event)"  -->
+                <button     
+                class="btn-style btn-primary" id="generate" type="submit">
                   Submit
                 </button>
                 <!-- <button class="btn-style btn-primary" id="remove" type="submit">
@@ -55,14 +57,12 @@
       </div>
       <div class="grid-item">
         <div class="trip-detiles ">
-          <!-- <div id="cityName"></div>
-          <div id="todate"></div>
-          <div id="weather"></div> -->
+      
           </div>
       </div>
     </div>
     </div>
-    <!-- <script src="../index.js"></script> -->
+    <!-- <script src="./src/index.js"></script> -->
 <script>
   // Check that service workers are supported
       if ('serviceWorker' in navigator) {

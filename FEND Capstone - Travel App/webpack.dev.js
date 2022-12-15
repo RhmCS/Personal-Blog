@@ -2,13 +2,16 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const WorkboxPlugin = require("workbox-webpack-plugin");
 
 module.exports = {
   entry: "./src/client/index.js",
   mode: "development",
-  devtool: false,
+  devtool: "source-map",
   stats: "verbose",
   output: {
+    libraryTarget: "var",
+    library: "Client",
     filename: "main.[contenthash].js",
     path: path.resolve(__dirname, "dist"),
   },
@@ -62,8 +65,10 @@ module.exports = {
       cleanStaleWebpackAssets: true,
       protectWebpackAssets: false,
     }),
-    new DefinePlugin({
-      "process.env": JSON.stringify(dotenv.config().parsed),
+
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify(require("dotenv").config().parsed),
     }),
+    // new WorkboxPlugin.GenerateSW(),
   ],
 };

@@ -1,9 +1,9 @@
-// import { getData } from "./client/js/getData";
-// import { postData } from "./client/js/postData";
-// import { updateData } from "./client/js/updateData";
-
+import { generate, form } from "./app";
+import { getData } from "./getData";
+import { postData } from "./postData";
+import { updateData } from "./updateData";
 // Function called by event listener
-export function handelSubmit(event) {
+function handelSubmit(event) {
   event.preventDefault();
 
   const city = document.getElementById("city").value;
@@ -18,7 +18,9 @@ export function handelSubmit(event) {
       photo: result.photo,
       date: result.date,
     });
-    form.reset();
+
     updateData();
   });
 }
+
+export { handelSubmit };
